@@ -1,1 +1,1 @@
-# git-analytics
+# git-manager
