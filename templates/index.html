@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock head %}
+
+
+{% block body %}
+  <p class>{{ msg }}</p>
+  <form action="/login" method="get">
+    <button name="forwardBtn" type="submit">Login with GitHub</button>
+  </form>
+  <form action="/logout" method="get">
+    <button name="forwardBtn" type="submit">Logout</button>
+  </form>
+{% endblock body %}

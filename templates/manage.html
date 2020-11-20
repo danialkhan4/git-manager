@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/manage.css') }}">
+{% endblock head %}
+
+
+{% block body %}
+  <img alt="profile" height=50 width=50 src={{ user.data.avatar_url }}/>
+
+  <!-- Render user information -->
+  <p>{{ user.data['login'] }}</p>
+
+  <!-- Render repository data -->
+  {% for repo in repos %}
+    <div class="repo-item">
+
+      <h5>{{ repo['name'] }}  </h5>
+      {% if repo['description'] %}
+        <h6>{{ repo['description'] }}  </h6>
+      {% endif %}
+      <p>{{ repo['url'] }}</p>
+      <p>{{ repo['html_url'] }}  </p>
+      <p>Open Issues: {{ repo['open_issues'] }}  </p>
+
+    </div>
+  {% endfor %}
+
+{% endblock body %}
